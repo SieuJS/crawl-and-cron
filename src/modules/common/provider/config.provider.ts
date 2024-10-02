@@ -16,7 +16,8 @@ export const configProvider = {
             JWT_SECRET: Joi.string().required(),
             JWT_ISSUER: Joi.string().required(),
             HEALTH_TOKEN: Joi.string().required(),
-            PASSENGERS_ALLOWED: Joi.string().valid('yes', 'no').required()
+            PASSENGERS_ALLOWED: Joi.string().valid('yes', 'no').required(),
+            CONFERENCE_ALLOWED: Joi.string().valid('yes', 'no').required()
         });
 
         const result = validationSchema.validate(env);

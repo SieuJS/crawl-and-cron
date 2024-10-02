@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-
 import { PrismaService } from '../../common';
 import { PassengerData, PassengerInput } from '../model';
 
@@ -21,7 +20,6 @@ export class PassengerService {
 
         return passengers.map(passenger => new PassengerData(passenger));
     }
-
     /**
      * Create a new passenger record
      *

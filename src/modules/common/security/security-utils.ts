@@ -9,20 +9,18 @@ export function extractTokenPayload(request: FastifyRequest): { role: Role } | n
     if (!header || !header.startsWith('Bearer ')) {
         return null;
     }
-
     const [, tokenChunk] = header.split(' ');
     if (!tokenChunk) {
         return null;
     }
 
     try {
-
         const env = process.env;
+
         const payload = jwt.verify(tokenChunk, `${env.JWT_SECRET}`, {
             algorithms: ['HS256'],
             issuer: env.JWT_ISSUER
         });
-
         if (typeof payload === 'string') {
             return null;
         }
