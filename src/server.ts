@@ -19,8 +19,8 @@ const API_DEFAULT_PREFIX = '/api/v1/';
  *
  * @todo Change the constants below following your API requirements
  */
-const SWAGGER_TITLE = 'Passenger API';
-const SWAGGER_DESCRIPTION = 'API used for passenger management';
+const SWAGGER_TITLE = 'CONFERENCE API';
+const SWAGGER_DESCRIPTION = 'API used for conference crawl and cron jobs';
 const SWAGGER_PREFIX = '/docs';
 
 /**
@@ -80,10 +80,8 @@ async function bootstrap(): Promise<void> {
  *       service for better error handling in production environments.
  */
 bootstrap().catch(err => {
-
     // eslint-disable-next-line no-console
     console.error(err);
-
     const defaultExitCode = 1;
     process.exit(defaultExitCode);
 });

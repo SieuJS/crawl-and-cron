@@ -61,6 +61,4 @@ export class ConferenceService {
             return new ConferenceData(conference);
         }
         
-
-
 }

@@ -2,7 +2,13 @@ import {  HttpException, HttpStatus } from "@nestjs/common";
 import { Browser } from "puppeteer";
 import { getConferencesOnPage, getTotalPages } from "./web-scraper-utils-provider";
 import { Conference, ConferenceData } from "../../model";
+export class WebScraperService {
+    constructor() {}
 
+    public getConferenceList = getConferenceList;
+    public searchConferenceLinks = searchConferenceLinks;
+    public getNewConferences = getNewConferences;
+}
 
 export async function getConferenceList(
     browser: Browser
@@ -108,7 +114,6 @@ export async function searchConferenceLinks(
     }
 }
 
-
 export async function getNewConferences(
     conferenceList: Conference[],
     existingConferences: ConferenceData[]
@@ -120,5 +125,7 @@ export async function getNewConferences(
                     existingConference.Acronym === conference.Acronym
             )
     );
+
     return newConferences;
 }
+

@@ -15,7 +15,8 @@
     "noUnusedLocals": true,
     "paths": {
       "@/*": ["./src/*"], 
-      "@refactLib/*" : ["./lib/*"]
+      "@refactLib/*" : ["./lib/*"],
+      "@temp/*" : ["./temp/*"]
     }
   },
   "include": [

@@ -1,4 +1,4 @@
 
 import { ConferenceService } from "./conference.service";
-
-export { ConferenceService}
+import { WebScraperService } from "./web-scraper-service/web-scraper.service";
+export { ConferenceService , WebScraperService}
